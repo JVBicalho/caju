@@ -1,12 +1,12 @@
 <template>
-    <div class="row " style="padding-bottom:3em" >
-        <div class="">
+    <div class="row "  >
+        <div class="col-12">
             <form @submit.prevent >
                 <section v-if="step == 1">
                     <div class="form-group">
                         <label for="item">Escolha a Maquina:</label>
                             <select class="form-control" 
-                            v-model="form.item"
+                            v-model="form.maquina"
                             id="item"
                             aria-describedby="itemHelp"
                             >
@@ -22,7 +22,23 @@
                     </div>
                 </section>
                 <section v-if="step == 2">
-                  
+                  <div class="form-group">
+                        <label for="item">Escolha seu plano de recebimento:</label>
+                            <select class="form-control" 
+                            v-model="form.planoRecebimento"
+                            id="item"
+                            aria-describedby="itemHelp"
+                            >
+                                <option v-for="plano in maquinas[form.maquina].planosRecebimento" v-bind:value="plano.index" v-bind:key="plano.index" >{{ plano.name }}</option>
+                                
+                                
+                                
+                            </select>
+                        
+                        <small id="itemHelp" class="form-text "
+                            ></small
+                        >
+                    </div>
                 </section>
                 <section v-if="step == 3">
                   
@@ -76,8 +92,8 @@ export default {
             maquinas:maquinasJSON,
             step: 1,
             form: {
-                item: null,
-                tier:null,
+                maquina: null,
+                planoRecebimento:null,
                 valor:null,
                 
             },

@@ -1,6 +1,6 @@
 [
   {
-    "index": 1,
+    "index": 0,
     "id": "mercado_point_mini",
     "name": "Mercado Point Mini",
     "txDebito": 1.99,
@@ -25,6 +25,11 @@
       }
     ],
     "txParcelamento": [
+      {
+        "index": 0,
+        "name": "Débito",
+        "taxa": 1.99
+      },
       {
         "index": 1,
         "name": "1x",
