@@ -25,11 +25,7 @@
       }
     ],
     "txParcelamento": [
-      {
-        "index": 0,
-        "name": "Débito",
-        "taxa": 1.99
-      },
+      
       {
         "index": 1,
         "name": "1x",
