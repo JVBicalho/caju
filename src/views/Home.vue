@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/logo.png" style="filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));">
     <CaJu />
   </div>
 </template>
