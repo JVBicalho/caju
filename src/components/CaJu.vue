@@ -1,6 +1,9 @@
 <template>
   <div class="row ">
     <div class="col-12">
+     <div v-if="infoMaquina">
+         {{ infoMaquina.name}}
+     </div>
       <form @submit.prevent>
         <section v-if="step == 1">
           <div class="form-group">
@@ -25,9 +28,9 @@
         <section v-if="step == 2">
           <div class="form-group">
             <label for="item">Crédito ou Débito ?</label>
-            <div class="form-check">
+            <div class="custom-control custom-radio mx-auto my-3 border border-secundary py-3 rounded">
               <input
-                class="form-check-input"
+                class="custom-control-input"
                 type="radio"
                 name="exampleRadios"
                 id="exampleRadios1"
@@ -35,20 +38,20 @@
                 v-model="form.credito"
                 checked
               />
-              <label class="form-check-label" for="exampleRadios1">
+              <label class="custom-control-label" for="exampleRadios1">
                 Débito.
               </label>
             </div>
-            <div class="form-check">
+            <div class="custom-control custom-radio">
               <input
-                class="form-check-input"
+                class="custom-control-input "
                 type="radio"
                 name="exampleRadios"
                 id="exampleRadios2"
                 v-bind:value="true"
                 v-model="form.credito"
               />
-              <label class="form-check-label" for="exampleRadios2">
+              <label class="custom-control-label" for="exampleRadios2">
                 Crédito.
               </label>
             </div>
@@ -131,7 +134,7 @@
         
         <button
           v-if="step < 5 && form.credito == true|| form.credito ==false && step < 3"
-          class="btn btn-primary col-12 mb-1"
+          class="btn btn-p1 col-12 mb-1"
           @click.prevent="nextStep()"
         >
           Proximo
@@ -146,7 +149,7 @@
                  -->
         <button
           v-else-if="step == 5 && form.credito == true"
-          class="btn btn-success col-12 "
+          class="btn btn-p1 col-12 "
           @click.prevent="calcularTaxaCredito()"
         >
           Calcular Taxa De Credito
@@ -160,7 +163,7 @@
         </button>
         <button
           v-if="step != 1 && step != 4"
-          class="btn btn-outline-primary col-12"
+          class="btn btn-p1-outline col-12"
           @click.prevent="prevStep()"
         >
           Anterior
@@ -169,6 +172,14 @@
     </div>
   </div>
 </template>
+<style scoped>
+    .custom-radio{
+        border:1px solid #dee2e6!important;
+        padding-top: 1rem!important;
+                padding-bottom: 1rem!important;
+
+    }
+</style>
 <script>
 import maquinasJSON from "./json/maquinas.json";
 export default {
@@ -220,5 +231,12 @@ export default {
       console.log(taxa);
     },
   },
+  computed :{
+      infoMaquina(){
+          
+        return this.maquinas[this.form.maquina];
+          
+      }
+  }
 };
 </script>
