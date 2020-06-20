@@ -13,6 +13,7 @@
               v-model="form.maquina"
               id="item"
               aria-describedby="itemHelp"
+               @change="emitir()" 
             >
               <option
                 v-for="maquina in maquinas"
@@ -90,6 +91,7 @@
                 v-model="form.txParcelamento"
                 id="item"
                 aria-describedby="itemHelp"
+               
               >
                 <option
                   v-for="taxa in maquinas[form.maquina].txParcelamento"
@@ -230,6 +232,9 @@ export default {
       taxa = valor * (txD / 100);
       console.log(taxa);
     },
+    emitir(){
+      this.$emit('maquina-teste',this.form.maquina)
+    }
   },
   computed :{
       infoMaquina(){
@@ -237,6 +242,7 @@ export default {
         return this.maquinas[this.form.maquina];
           
       }
-  }
+  },
+ 
 };
 </script>

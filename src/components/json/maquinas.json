@@ -4,6 +4,7 @@
     "id": "mercado_point_mini",
     "name": "Mercado Point Mini",
     "txDebito": 1.99,
+    "imagem": "mercadopointmini.png",
     "planosRecebimento": [
       {
         "index": 1,

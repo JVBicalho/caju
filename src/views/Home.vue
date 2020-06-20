@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <img alt="Vue logo" src="../assets/logo.png" style="filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));">
-    <CaJu />
+    
+    <img alt="Vue logo" v-if="maquina" :src="catImg(maquina.imagem)" >
+    <CaJu  @maquina-teste="teste"/>
   </div>
 </template>
 
@@ -9,11 +10,32 @@
 // @ is an alias to /src
 
 import CaJu from '@/components/CaJu.vue'
+import maquinasJSON from "../components/json/maquinas.json";
 
 export default {
   name: 'Home',
   components: {
    CaJu
-  }
+  },
+  data: function() {
+    return {
+      maquina: null,
+      maquinas : maquinasJSON,
+    }
+  },
+  
+  methods: {
+    // Triggered when `childToParent` event is emitted by the child.
+    teste: function (value) {
+      console.log(value);
+      this.maquina = this.maquinas[value]
+     
+    },
+    catImg(pic){
+       return require('../assets/img/'+ pic);
+    }
+   },
+
+
 }
 </script>
