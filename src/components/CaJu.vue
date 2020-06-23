@@ -1,12 +1,10 @@
 <template>
-  <div class="row ">
-    <div class="col-12">
-     <div v-if="infoMaquina">
-         {{ infoMaquina.name}}
-     </div>
+  <div class="row my-auto" > 
+    <div class="col-12 my-auto p-3">
+     
       <form @submit.prevent>
         <section v-if="step == 1">
-          <div class="form-group">
+          <div class="form-group ">
             <label for="item">Escolha a Maquina:</label>
             <select
               class="form-control"
@@ -132,11 +130,14 @@
           </section>
         </div>
       </form>
+      <div class="result" v-if="result">
+          {{ result}}
+      </div>
       <div>
         
         <button
           v-if="step < 5 && form.credito == true|| form.credito ==false && step < 3"
-          class="btn btn-p1 col-12 mb-1"
+          class="btn btn-p1 col-12 mt-1"
           @click.prevent="nextStep()"
         >
           Proximo
@@ -165,7 +166,7 @@
         </button>
         <button
           v-if="step != 1 && step != 4"
-          class="btn btn-p1-outline col-12"
+          class="btn btn-p1-outline col-12 mt-2"
           @click.prevent="prevStep()"
         >
           Anterior
@@ -199,7 +200,7 @@ export default {
         credito: false,
       },
       itemPrice: null,
-      result: [],
+      result: null,
     };
   },
   methods: {
@@ -231,6 +232,11 @@ export default {
       var txD = self.maquinas[self.form.maquina].txDebito;
       taxa = valor * (txD / 100);
       console.log(taxa);
+      this.result = {
+        "maquina" : self.maquinas[self.form.maquina].name,
+        
+        "taxa": taxa,
+      }
     },
     emitir(){
       this.$emit('maquina-teste',this.form.maquina)

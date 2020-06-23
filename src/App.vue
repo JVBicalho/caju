@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     
     <nav class="navbar navbar-expand-lg navbar-dark shadow-lg" style="background-color: #037058;">
       <a class="navbar-brand" href="#">Caju</a>
@@ -31,7 +31,13 @@
        
       </div>
     </nav>
-    <router-view />
+    
+    <div class="container">
+      <router-view />
+
+    </div>
+
+    
   </div>
 </template>
 

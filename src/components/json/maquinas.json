@@ -88,5 +88,97 @@
         "taxa": 16.15
       }
     ]
+  },
+  {
+    "index": 1,
+    "id": "minizinha_pagseguro",
+    "name": "Minizinha PagSeguro",
+    "txDebito": 1.99,
+    "imagem": "minizinha_pagseguro.png",
+    "planosRecebimento": [
+      {
+        "index": 1,
+        "id": "na_hora",
+        "name": "Na hora",
+        "taxa": 4.99
+        
+      },
+      {
+        "index": 2,
+        "id": "14_dias",
+        "name": "14 dias",
+        "taxa": 4.36
+      },
+      {
+        "index": 3,
+        "id": "30_dias",
+        "name": "30 dias",
+        "taxa": 3.6
+      }
+    ],
+    "txParcelamento": [
+      
+      {
+        "index": 1,
+        "name": "1x",
+        "taxa": 0
+      },
+      {
+        "index": 2,
+        "name": "2x",
+        "taxa": 4.09
+      },
+      {
+        "index": 3,
+        "name": "3x",
+        "taxa": 5.41
+      },
+      {
+        "index": 4,
+        "name": "4x",
+        "taxa": 6.7
+      },
+      {
+        "index": 5,
+        "name": "5x",
+        "taxa": 7.96
+      },
+      {
+        "index": 6,
+        "name": "6x",
+        "taxa": 9.2
+      },
+      {
+        "index": 7,
+        "name": "7x",
+        "taxa": 10.41
+      },
+      {
+        "index": 8,
+        "name": "8x",
+        "taxa": 11.61
+      },
+      {
+        "index": 9,
+        "name": "9x",
+        "taxa": 12.78
+      },
+      {
+        "index": 10,
+        "name": "10x",
+        "taxa": 13.92
+      },
+      {
+        "index": 11,
+        "name": "11x",
+        "taxa": 15.05
+      },
+      {
+        "index": 12,
+        "name": "12x",
+        "taxa": 16.15
+      }
+    ]
   }
+
 ]

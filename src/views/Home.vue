@@ -1,8 +1,21 @@
 <template>
-  <div class="container">
+  <div class="row h-100"  >
     
-    <img alt="Vue logo" v-if="maquina" :src="catImg(maquina.imagem)" >
-    <CaJu  @maquina-teste="teste"/>
+      <div class="col-12 ">
+        <div class="row pt-4" v-if="maquina">
+          <div class="pull-left col-6">
+            <img alt="Vue logo"  :src="catImg(maquina.imagem)" style="filter: drop-shadow(0 6px 10px rgba(0,0,0,.5));" >
+
+          </div>
+          <div class="col-6">
+            <h3 class="text-justify">{{ maquina.name}}</h3>
+          </div>
+        </div>
+
+        <CaJu  @maquina-teste="teste" />
+      </div>
+      
+  
   </div>
 </template>
 
